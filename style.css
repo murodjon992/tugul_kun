@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(150deg, rgb(53, 10, 10) , rgb(7, 7, 59), rgb(21, 47, 21));
+}
+img{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+
+}
+h1{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    font-size: 40px;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px #000;
+    letter-spacing: 5px;
+    text-align: center;
+    color: red;
+}
+.box{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: animate 50s linear infinite;
+}
+.span{
+    padding: 20px;
+    color: #000000;
+    animation: ism 5s linear infinite;
+    margin-top: 30px;
+    display: inline-block;
+}
+.span:hover{
+    text-shadow: 0 0 10px #070707,
+                 0 0 20px #0f0f0f,
+                 0 0 40px #0c0c0c,
+                 0 0 80px #0a0a0a,
+                 0 0 120px #000000,
+                 0 0 160px #0c0c0c;
+}
+@keyframes ism {
+    0%{
+        text-shadow: 0 0 160px #ffd900;
+        background-color: rgba(0, 0, 0, 0.2);
+        color: rgba(255, 217, 0, 0.2);
+        border-radius: 0;
+        font-weight: 100;
+    }
+    20%{
+        text-shadow: 0 0 120px #ffd900;
+        color: rgba(255, 217, 0, 0.4);
+        font-weight: 300;
+    }
+    40%{
+        text-shadow: 0 0 80px #ffd900;
+        /* background-color: rgba(0, 0, 0, 0.6); */
+        color: rgba(255, 217, 0, 0.6);
+        border-radius: 20px;
+        font-weight: 400;
+
+    }
+    60%{
+        text-shadow: 0 0 40px #ffd900;
+        /* background-color: rgba(0, 0, 0, 0.8); */
+        color: rgba(255, 217, 0, 0.8);
+        font-weight: 600;
+    }
+    80%{
+        text-shadow: 0 0 20px #ffd900;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #ffd900;
+        border-radius: 50px;
+    }
+    100%{
+        text-shadow: 0 0 10px #ffd900;
+        background-color: #000;
+        font-weight: 900;
+        border-radius: 80px;
+
+    }
+}
+@keyframes animate {
+    0%{
+        transform:  perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform:  perspective(1000px) rotateY(360deg);
+    }
+    
+}
+.box span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style:flat;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(600px);
+    -webkit-box-reflect: below 0px linear-gradient(transparent, rgb(208, 245, 2), transparent);
+}
